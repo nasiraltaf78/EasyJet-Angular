@@ -1,0 +1,22 @@
+<div class="full-details">
+    <h4>Your selected flight details</h4>
+    
+    <!-- Full Details: When router loads template ID is passed and appropriate data is loaded -->
+    <ul>
+        <li><span>Flight Number:</span> {{ selectedResult.flightNumber.carrierCode }} {{ selectedResult.flightNumber.number }}</li>
+        <li><span>From:</span> {{ selectedResult.departureAirport }}</li>
+        <li><span>To:</span> {{ selectedResult.arrivalAirport }}</li>
+        <li><span>Departure Terminal:</span> {{ selectedResult.depTerminalName }}</li>
+        <li><span>Departure Time:</span> {{ selectedResult.localDepartureTime | date:"longDate" }}</li>
+        <li><span>Arrival Time:</span> {{ selectedResult.localArrivalTime | date:"longDate" }}</li>
+        <li><span>Seats Available:</span> {{ selectedResult.seatsAvailable }}</li>
+
+        <li><span>Adult Fare:</span> &pound;{{ selectedResult.prices.adult.value }}</li>
+        <li><span>Debit Card Booking Fee:</span> &pound;{{ selectedResult.prices.adult.valueWithDebitCard }}</li>
+        <li><span>Credit Card Booking Fee:</span> &pound;{{ selectedResult.prices.adult.valueWithCreditCard }}</li>
+
+        <li><span>Child Fare:</span> &pound;{{ selectedResult.prices.child.value }}</li>
+        <li><span>Debit Card Booking Fee:</span> &pound;{{ selectedResult.prices.child.valueWithDebitCard }}</li>
+        <li><span>Credit Card Booking Fee:</span> &pound;{{ selectedResult.prices.child.valueWithCreditCard }}</li>
+    </ul>
+</div>

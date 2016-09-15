@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  background: #f2f2f2;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+}
+header {
+  max-width: 900px;
+  height: 100px;
+  margin: 0 auto;
+  background: #3498DB;
+}
+.disable-focus-ring {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0);
+  outline: none;
+}
+.wrapper {
+  max-width: 900px;
+  background: #fff;
+  margin: 0 auto;
+}
+.search-sort {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6e6e6;
+  overflow: auto;
+}
+.search-sort input {
+  float: left;
+  border: none;
+  font-size: 14px;
+  width: calc(100% - 190px);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0);
+  outline: none;
+}
+.search-sort div {
+  float: right;
+  width: 180px;
+  text-align: right;
+}
+.search-sort div span {
+  font-size: 12px;
+  padding-right: 5px;
+}
+.result {
+  height: 40px;
+  border-bottom: 1px solid #e6e6e6;
+  overflow: auto;
+  line-height: 40px;
+  transition: background 0.2s ease;
+  background: #fff;
+}
+.result a {
+  float: right;
+  width: 100px;
+  background: #27AE60;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.result a:hover {
+  background: #2ECC71;
+  text-decoration: underline;
+}
+.result:hover {
+  background: #f8f9f9;
+}
+.result:hover a {
+  background: #2ECC71;
+}
+.basic-details {
+  float: left;
+  width: calc(100% - 110px);
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.basic-details span.flight-num {
+  padding: 0 10px 0 15px;
+}
+.basic-details span.from,
+.basic-details span.to {
+  padding-right: 10px;
+}
+.basic-details span span {
+  float: none;
+  color: #999;
+}
+.no-result {
+  padding: 10px 15px;
+  color: #fff;
+  background: #F01C45;
+}
+h4 {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.full-details {
+  padding: 15px;
+}
+.full-details ul li {
+  padding-bottom: 5px;
+}
+.full-details ul li span {
+  display: inline-block;
+  width: 200px;
+  color: #999;
+}
+.full-details ul li:last-child {
+  padding-bottom: 0;
+}

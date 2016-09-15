@@ -1,0 +1,39 @@
+<!-- Filtering & Sorting -->
+<div class="search-sort">
+    <!-- Search for anything($) in the results returned. -->
+    <input type="text" id="search" ng-model="search.$" placeholder="Search anything..." />
+    
+    <!-- Sort results list by value passed from this <select> to orderBy. -->
+    <div>    
+        <span>Sort:</span>
+        <select ng-model="order">
+            <option value="flightNumber.number">Flight Number (ASC)</option>
+            <option value="-flightNumber.number">Flight Number (DEC)</option>
+            <option value="localDepartureTime">Date (ASC)</option>
+            <option value="-localDepartureTime">Date (DEC)</option>
+        </select>
+    </div>
+</div>
+
+<!-- Result List 
+    ng-repeat: Loop through all results, and those searched for, and those ordered by.
+    ng-click: On click sets this result as selectedResult.
+-->
+<div class="result" 
+    ng-repeat="result in filteredResults = (flights.resultsData | filter: search | orderBy: order)" 
+    ng-click="selectFlight(result)">
+
+    <div class="basic-details">
+        <span class="flight-num">EZY {{ result.flightNumber.number }}</span>
+        <span class="from"><span>From:</span> {{ result.departureAirport }}</span> 
+        <span class="to"><span>To:</span> {{ result.arrivalAirport }}</span>
+        <span class="date"><span>Date:</span> {{ result.localDepartureTime | date:"longDate" }}</span>
+    </div>
+    
+    <!-- When link is clicked pass (result)ID to details router to populate data associated to the ID. -->
+    <a ng-href="#/detail/{{result.id}}">More</a>
+</div>
+
+<!-- If after all filters no result is returned then show this message. -->
+<div class="no-result" ng-show="filteredResults.length == 0">No matches found!</div>
+
